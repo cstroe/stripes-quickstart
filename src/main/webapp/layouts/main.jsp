@@ -16,13 +16,13 @@
       <nav class="navbar navbar-default">
         <div class="container">
           <ul class="nav navbar-nav">
-            <li class="${viewAllNotesClass}">
+            <li id="viewNotesNav" class="${viewAllNotesClass}">
               <s:link beanclass="com.github.cstroe.sqs.www.NoteActionBean">View Notes</s:link>
             </li>
-            <li class="${addNotebookClass}">
+            <li id="addNotebookNav" class="${addNotebookClass}">
               <s:link beanclass="com.github.cstroe.sqs.www.NotebookActionBean" event="create">Add Notebook</s:link>
             </li>
-            <li class="${addNoteClass}">
+            <li id="addNoteNav" class="${addNoteClass}">
               <s:link beanclass="com.github.cstroe.sqs.www.NoteActionBean" event="create">Add Note</s:link>
             </li>
           </ul>
