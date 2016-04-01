@@ -1,14 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://stripes.sourceforge.net/stripes.tld" prefix="s" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-<%@ taglib uri="http://stripes.sourceforge.net/stripes.tld" prefix="s" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <s:layout-render
     name="/layouts/main.jsp"
     title="Create Note"
+    addNoteClass="active"
     recentNotes="${actionBean.recentNotes}">
   <s:layout-component name="pageBody">
     <div class="container">
@@ -31,7 +29,13 @@
         <div class="col-sm-2">
         </div>
       </div>
-      <s:submit name="submit" class="btn btn-primary pull-right" value="Create"/>
+      <div class="form-group">
+              <div class="col-sm-2"></div>
+              <div class="col-sm-8">
+                  <s:submit name="submit" class="btn btn-primary pull-right" value="Add"/>
+              </div>
+              <div class="col-sm-2"></div>
+            </div>
     </s:form>
     </div>
   </s:layout-component>

@@ -7,7 +7,7 @@
     <html>
     <head>
         <meta charset="utf-8">
-        <title>Basic Bootstrap Template</title>
+        <title>${title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/3.3.6/css/bootstrap.min.css">
     </head>
@@ -15,30 +15,12 @@
     <body>
       <nav class="navbar navbar-default">
         <div class="container">
-          <div class="navbar-header">
-            <s:link beanclass="com.github.cstroe.sqs.www.NoteActionBean" class="navbar-brand">Notes</s:link>
-          </div>
           <ul class="nav navbar-nav">
-            <c:choose>
-              <c:when test="${title == 'View Notes'}">
-                <c:set var="allNotesClass" value="active"/>
-              </c:when>
-              <c:when test="${title == 'Add Notebook'}">
-                <c:set var="addGroupClass" value="active"/>
-              </c:when>
-              <c:when test="${title == 'Create Note'}">
-                <c:set var="addNoteClass" value="active"/>
-              </c:when>
-
-              <c:otherwise>
-                ${actionBean.recordError()}
-              </c:otherwise>
-            </c:choose>
-            <li class="${allNotesClass}">
-              <s:link beanclass="com.github.cstroe.sqs.www.NoteActionBean">List</s:link>
+            <li class="${viewAllNotesClass}">
+              <s:link beanclass="com.github.cstroe.sqs.www.NoteActionBean">View Notes</s:link>
             </li>
-            <li class="${addGroupClass}">
-              <s:link beanclass="com.github.cstroe.sqs.www.NoteActionBean" event="create">Add Group</s:link>
+            <li class="${addNotebookClass}">
+              <s:link beanclass="com.github.cstroe.sqs.www.NotebookActionBean" event="create">Add Notebook</s:link>
             </li>
             <li class="${addNoteClass}">
               <s:link beanclass="com.github.cstroe.sqs.www.NoteActionBean" event="create">Add Note</s:link>
