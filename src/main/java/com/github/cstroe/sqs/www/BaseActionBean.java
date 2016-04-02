@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class BaseActionBean implements ActionBean {
+class BaseActionBean implements ActionBean {
     private ActionBeanContext context;
 
     public void setContext(ActionBeanContext context) {
