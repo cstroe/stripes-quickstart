@@ -1,7 +1,7 @@
 package com.github.cstroe.sqs.www;
 
-import com.github.cstroe.sqs.hibernate.NotebookDto;
-import com.github.cstroe.sqs.hibernate.NoteDto;
+import com.github.cstroe.sqs.dao.NotebookDto;
+import com.github.cstroe.sqs.dao.NoteDto;
 import com.github.cstroe.sqs.model.Note;
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.ForwardResolution;

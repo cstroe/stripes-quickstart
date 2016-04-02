@@ -1,6 +1,6 @@
 package com.github.cstroe.sqs.www;
 
-import com.github.cstroe.sqs.hibernate.NotebookDto;
+import com.github.cstroe.sqs.dao.NotebookDto;
 import com.github.cstroe.sqs.model.Notebook;
 import com.github.cstroe.sqs.model.Note;
 import net.sourceforge.stripes.action.ActionBean;

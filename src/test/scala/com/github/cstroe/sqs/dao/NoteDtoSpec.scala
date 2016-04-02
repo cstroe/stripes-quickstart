@@ -1,4 +1,4 @@
-package com.github.cstroe.sqs.hibernate
+package com.github.cstroe.sqs.dao
 
 import java.time.LocalDateTime
 
