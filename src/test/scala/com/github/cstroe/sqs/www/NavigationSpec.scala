@@ -25,6 +25,7 @@ class NavigationSpec extends FlatSpec with ShouldMatchers with HtmlUnit {
 
   "The add notebook page" should "have the correct title and nav button highlighted" in {
     go to host + "/app/" + classOf[NotebookActionBean].getSimpleName.replace("ActionBean", "").toLowerCase + "/new"
+    pageTitle should be ("Add Notebook")
 
     val viewNotes = find("viewNotesNav").get
     viewNotes.tagName should be ("li")
@@ -41,6 +42,7 @@ class NavigationSpec extends FlatSpec with ShouldMatchers with HtmlUnit {
 
   "The add note page" should "have the correct title and nav button highlighted" in {
     go to host + "/app/" + classOf[NoteActionBean].getSimpleName.replace("ActionBean", "").toLowerCase + "/new"
+    pageTitle should be ("Add Note")
 
     val viewNotes = find("viewNotesNav").get
     viewNotes.tagName should be ("li")
