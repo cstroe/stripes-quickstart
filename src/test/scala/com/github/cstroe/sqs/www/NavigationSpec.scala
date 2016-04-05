@@ -4,10 +4,8 @@ import org.scalatest.{FlatSpec, ShouldMatchers}
 import org.scalatest.selenium.HtmlUnit
 
 class NavigationSpec extends FlatSpec with ShouldMatchers with HtmlUnit {
-  val host = "http://localhost:8080/"
-
   "The home page" should "have the correct title and nav button highlighted" in {
-    go to host + "/app/" + classOf[NoteActionBean].getSimpleName.replace("ActionBean", "").toLowerCase
+    go to StripesUtil.host
     pageTitle should be ("View Notes")
 
     val viewNotes = find("viewNotesNav").get
@@ -24,7 +22,7 @@ class NavigationSpec extends FlatSpec with ShouldMatchers with HtmlUnit {
   }
 
   "The add notebook page" should "have the correct title and nav button highlighted" in {
-    go to host + "/app/" + classOf[NotebookActionBean].getSimpleName.replace("ActionBean", "").toLowerCase + "/new"
+    go to StripesUtil.getUrl(classOf[NotebookActionBean], "new")
     pageTitle should be ("Add Notebook")
 
     val viewNotes = find("viewNotesNav").get
@@ -41,7 +39,7 @@ class NavigationSpec extends FlatSpec with ShouldMatchers with HtmlUnit {
   }
 
   "The add note page" should "have the correct title and nav button highlighted" in {
-    go to host + "/app/" + classOf[NoteActionBean].getSimpleName.replace("ActionBean", "").toLowerCase + "/new"
+    go to StripesUtil.getUrl(classOf[NoteActionBean], "new")
     pageTitle should be ("Add Note")
 
     val viewNotes = find("viewNotesNav").get
