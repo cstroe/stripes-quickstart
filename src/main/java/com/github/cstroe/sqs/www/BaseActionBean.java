@@ -1,6 +1,6 @@
 package com.github.cstroe.sqs.www;
 
-import com.github.cstroe.sqs.dao.NotebookDto;
+import com.github.cstroe.sqs.dao.NotebookDao;
 import com.github.cstroe.sqs.model.Notebook;
 import com.github.cstroe.sqs.model.Note;
 import net.sourceforge.stripes.action.ActionBean;
@@ -32,9 +32,9 @@ class BaseActionBean implements ActionBean {
 
     public List<Notebook> getGroups() {
         List<Notebook> fakeNotebooks = new LinkedList<>();
-        fakeNotebooks.add(new NotebookDto(1, "Default"));
-        fakeNotebooks.add(new NotebookDto(1, "My Project"));
-        fakeNotebooks.add(new NotebookDto(1, "Random"));
+        fakeNotebooks.add(new NotebookDao(1, "Default"));
+        fakeNotebooks.add(new NotebookDao(1, "My Project"));
+        fakeNotebooks.add(new NotebookDao(1, "Random"));
         return fakeNotebooks;
     }
 }

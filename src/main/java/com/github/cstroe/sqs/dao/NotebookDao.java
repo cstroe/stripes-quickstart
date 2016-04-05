@@ -4,17 +4,28 @@ import com.github.cstroe.sqs.model.Notebook;
 import com.github.cstroe.sqs.model.Note;
 import com.google.common.base.Preconditions;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Collections;
 import java.util.List;
 
-public class NotebookDto implements Notebook {
+@Entity
+@Table(name = "notebook")
+public class NotebookDao implements Notebook {
+    @Id
+    @Column(name = "id")
     private long id;
+
+    @Column(name = "name")
     private String name;
+
     private List<Note> notes;
 
-    private NotebookDto() {}
+    private NotebookDao() {}
 
-    public NotebookDto(long id, String name) {
+    public NotebookDao(long id, String name) {
         Preconditions.checkArgument(id >= 0);
         Preconditions.checkNotNull(name);
         this.setId(id);

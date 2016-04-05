@@ -7,7 +7,7 @@ import com.google.common.base.Preconditions;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
-public class NoteDto implements Note {
+public class NoteDao implements Note {
     private long id;
     private String author;
     private LocalDateTime created;
@@ -15,9 +15,9 @@ public class NoteDto implements Note {
     private String content;
     private Notebook notebook;
 
-    private NoteDto() {}
+    private NoteDao() {}
 
-    public NoteDto(long id, String author, LocalDateTime created, String title, String content, Notebook notebook) {
+    public NoteDao(long id, String author, LocalDateTime created, String title, String content, Notebook notebook) {
         Preconditions.checkArgument(id >= 0);
         Preconditions.checkNotNull(author);
         Preconditions.checkNotNull(created);

@@ -5,7 +5,7 @@
 
 <s:layout-render
     name="/layouts/main.jsp"
-    title="Create Notebook"
+    title="Add Notebook"
     addNotebookClass="active"
     recentNotes="${actionBean.recentNotes}">
   <s:layout-component name="pageBody">

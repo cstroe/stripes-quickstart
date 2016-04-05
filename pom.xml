@@ -98,12 +98,37 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <!-- Hibernate, the defacto ORM -->
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.1.0.Final</version>
+        </dependency>
+        <dependency>
+            <!-- Hikari connection pooling library for Hibernate -->
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-hikaricp</artifactId>
+            <version>5.1.0.Final</version>
+        </dependency>
+        <dependency>
+            <!-- Use the Java 8 date/time types with Hibernate -->
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-java8</artifactId>
+            <version>5.1.0.Final</version>
+        </dependency>
+        <dependency>
+            <!-- SQLite for the database -->
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.8.11.2</version>
+        </dependency>
+        <dependency>
+            <!-- Twitter's Bootstrap -->
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
             <version>3.3.6</version>
         </dependency>
         <dependency>
-            <!-- Unit testing framework -->
+            <!-- BDD style testing framework -->
             <groupId>org.scalatest</groupId>
             <artifactId>scalatest_2.11</artifactId>
             <version>2.2.6</version>
@@ -119,11 +144,19 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-remote-driver</artifactId>
             <version>${selenium.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>phantomjsdriver</artifactId>
             <version>1.2.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <!-- Required by Selenium/PhantomJS -->
+            <groupId>xml-apis</groupId>
+            <artifactId>xml-apis</artifactId>
+            <version>1.4.01</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
