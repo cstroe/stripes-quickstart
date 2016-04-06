@@ -16,10 +16,10 @@
             <thead>
               <th>Notebook</th>
             </thead>
-            <tbody>
-              <c:forEach items="${actionBean.groups}" var="group">
+            <tbody id="notebooksList">
+              <c:forEach items="${actionBean.notebooks}" var="notebook">
                 <tr>
-                  <td>${group.name}</td>
+                  <td>${notebook.name}</td>
                 </tr>
               </c:forEach>
             </tbody>

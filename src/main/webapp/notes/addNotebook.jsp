@@ -16,7 +16,7 @@
       <div class="form-group">
         <label class="control-label col-sm-2">Name:</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" id="name" placeholder="Enter notebook name"/>
+          <input type="text" name="notebookName" class="form-control" placeholder="Enter notebook name"/>
         </div>
         <div class="col-sm-2">
         </div>
@@ -24,7 +24,7 @@
       <div class="form-group">
         <div class="col-sm-2"></div>
         <div class="col-sm-8">
-            <s:submit name="submit" class="btn btn-primary pull-right" value="Add"/>
+            <s:submit name="create" class="btn btn-primary pull-right" value="Add" />
         </div>
         <div class="col-sm-2"></div>
       </div>

@@ -26,6 +26,10 @@
             <param-name>ActionResolver.Packages</param-name>
             <param-value>com.github.cstroe.sqs.www</param-value>
         </init-param>
+        <init-param>
+            <param-name>Interceptor.Classes</param-name>
+            <param-value>com.github.cstroe.sqs.hibernate.HibernateStripesInterceptor</param-value>
+        </init-param>
     </filter>
 
     <filter-mapping>

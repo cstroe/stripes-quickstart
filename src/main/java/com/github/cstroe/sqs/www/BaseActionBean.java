@@ -1,10 +1,13 @@
 package com.github.cstroe.sqs.www;
 
 import com.github.cstroe.sqs.dao.NotebookDao;
+import com.github.cstroe.sqs.hibernate.HibernateSessionUtil;
 import com.github.cstroe.sqs.model.Notebook;
 import com.github.cstroe.sqs.model.Note;
+import com.github.cstroe.sqs.repository.RepositoryFactory;
 import net.sourceforge.stripes.action.ActionBean;
 import net.sourceforge.stripes.action.ActionBeanContext;
+import org.hibernate.Session;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -12,6 +15,15 @@ import java.util.List;
 
 class BaseActionBean implements ActionBean {
     private ActionBeanContext context;
+    private Session session;
+
+    public BaseActionBean() {
+        session = HibernateSessionUtil.getCurrentSession();
+    }
+
+    public Session getSession() {
+        return session;
+    }
 
     public void setContext(ActionBeanContext context) {
         this.context = context;
@@ -30,11 +42,7 @@ class BaseActionBean implements ActionBean {
         throw new RuntimeException("Error was encountered");
     }
 
-    public List<Notebook> getGroups() {
-        List<Notebook> fakeNotebooks = new LinkedList<>();
-        fakeNotebooks.add(new NotebookDao(1, "Default"));
-        fakeNotebooks.add(new NotebookDao(1, "My Project"));
-        fakeNotebooks.add(new NotebookDao(1, "Random"));
-        return fakeNotebooks;
+    public List<Notebook> getNotebooks() {
+        return RepositoryFactory.notebook().findAll();
     }
 }

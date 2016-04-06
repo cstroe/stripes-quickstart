@@ -6,6 +6,8 @@ import com.google.common.base.Preconditions;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Collections;
@@ -15,13 +17,14 @@ import java.util.List;
 @Table(name = "notebook")
 public class NotebookDao implements Notebook {
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "id")
     private long id;
 
     @Column(name = "name")
     private String name;
 
-    private List<Note> notes;
+    //private List<Note> notes;
 
     private NotebookDao() {}
 
@@ -50,11 +53,11 @@ public class NotebookDao implements Notebook {
         this.name = name;
     }
 
-    public List<Note> getNotes() {
-        return Collections.unmodifiableList(notes);
-    }
+//    public List<Note> getNotes() {
+//        return Collections.unmodifiableList(notes);
+//    }
 
-    public void setNotes(List<Note> notes) {
-        this.notes = notes;
-    }
+//    public void setNotes(List<Note> notes) {
+//        this.notes = notes;
+//    }
 }
