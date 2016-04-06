@@ -2,7 +2,7 @@ package com.github.cstroe.sqs.www
 
 import org.scalatest._
 import org.scalatest.concurrent.Eventually
-import org.scalatest.selenium.{HtmlUnit, WebBrowser}
+import org.scalatest.selenium.HtmlUnit
 
 class NotebookPageSpec extends FunSpec with BeforeAndAfter with ShouldMatchers with HtmlUnit with Eventually {
 
