@@ -38,6 +38,19 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+<           <plugin>
+                <!-- Compile our Scala code. -->
+                <groupId>org.scala-tools</groupId>
+                <artifactId>maven-scala-plugin</artifactId>
+                <version>2.14.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <!--
                     Use "mvn jetty:run" to start Jetty and deploy app.
@@ -62,8 +75,8 @@
                 <artifactId>scalatest-maven-plugin</artifactId>
                 <version>1.0</version>
                 <configuration>
+                    <wildcardSuites>*Spec</wildcardSuites>
                     <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
-                    <membersOnlySuites>com.github.cstroe.sqs.dao</membersOnlySuites>
                 </configuration>
                 <executions>
                     <execution>

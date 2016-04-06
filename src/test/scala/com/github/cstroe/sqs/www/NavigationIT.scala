@@ -3,7 +3,7 @@ package com.github.cstroe.sqs.www
 import org.scalatest.{FlatSpec, ShouldMatchers}
 import org.scalatest.selenium.HtmlUnit
 
-class NavigationSpec extends FlatSpec with ShouldMatchers with HtmlUnit {
+class NavigationIT extends FlatSpec with ShouldMatchers with HtmlUnit {
   "The home page" should "have the correct title and nav button highlighted" in {
     go to StripesUtil.host
     pageTitle should be ("View Notes")
