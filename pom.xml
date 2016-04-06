@@ -38,7 +38,7 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-<           <plugin>
+            <plugin>
                 <!-- Compile our Scala code. -->
                 <groupId>org.scala-tools</groupId>
                 <artifactId>maven-scala-plugin</artifactId>
