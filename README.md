@@ -1,5 +1,9 @@
 # A Stripes Quickstart
 
+This project is meant to be a starting point for a Java Web App.  Feel free to adapt it to your needs.
+
+## What is it?
+
 A simple note management application, with the following features:
 * Create Notes with title, created date, and note body
 * Organize Notes in named Notebooks
