@@ -24,8 +24,6 @@ public class NotebookDao implements Notebook {
     @Column(name = "name")
     private String name;
 
-    //private List<Note> notes;
-
     private NotebookDao() {}
 
     public NotebookDao(long id, String name) {
@@ -52,12 +50,4 @@ public class NotebookDao implements Notebook {
     public void setName(String name) {
         this.name = name;
     }
-
-//    public List<Note> getNotes() {
-//        return Collections.unmodifiableList(notes);
-//    }
-
-//    public void setNotes(List<Note> notes) {
-//        this.notes = notes;
-//    }
 }
