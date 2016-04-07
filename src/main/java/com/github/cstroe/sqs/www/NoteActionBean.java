@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 
 @UrlBinding("/app/note/{$event}")
 public class NoteActionBean extends BaseActionBean {
-    private long noteId;
+    public String title;
 
     @DefaultHandler
     public Resolution viewAll() {
@@ -31,13 +31,5 @@ public class NoteActionBean extends BaseActionBean {
 
     public Note getNote() {
         return new NoteDao(1, "A User", LocalDateTime.now(), "Some Note", "Blah\nBlah\nBlah", new NotebookDao(1, "Ungrouped"));
-    }
-
-    public long getNoteId() {
-        return noteId;
-    }
-
-    public void setNoteId(long noteId) {
-        this.noteId = noteId;
     }
 }

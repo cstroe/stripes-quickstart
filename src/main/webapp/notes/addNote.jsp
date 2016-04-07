@@ -10,11 +10,23 @@
     recentNotes="${actionBean.recentNotes}">
   <s:layout-component name="pageBody">
     <div class="container">
+    <div class="col-sm-12">
+      <s:errors/>
+      <s:messages/>
+    </div>
     <s:form beanclass="com.github.cstroe.sqs.www.NoteActionBean"
             id="createNoteForm"
             class="form-horizontal">
       <div class="form-group">
-        <label class="control-label col-sm-2">Title:</label>
+        <label class="control-label col-sm-2" for="selectNotebook">Notebook:</label>
+        <div class="col-sm-8">
+          <s:select name="notebook" class="form-control" id="selectNotebook">
+            <s:options-collection collection="${actionBean.notebooks}" label="name" value="id"/>
+          </s:select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="title">Title:</label>
         <div class="col-sm-8">
           <input type="text" class="form-control" id="title" placeholder="Enter title"/>
         </div>
@@ -22,9 +34,9 @@
         </div>
       </div>
       <div class="form-group">
-        <label class="control-label col-sm-2"></label>
+        <label class="control-label col-sm-2" for="comment">Note:</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" id="content" placeholder="Enter note content"/>
+          <textarea class="form-control" rows="5" id="comment" placeholder="Enter note content"></textarea>
         </div>
         <div class="col-sm-2">
         </div>
@@ -32,7 +44,7 @@
       <div class="form-group">
               <div class="col-sm-2"></div>
               <div class="col-sm-8">
-                  <s:submit name="submit" class="btn btn-primary pull-right" value="Add"/>
+                  <s:submit name="create" class="btn btn-primary pull-right" value="Add"/>
               </div>
               <div class="col-sm-2"></div>
             </div>
