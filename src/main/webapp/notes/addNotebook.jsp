@@ -13,13 +13,9 @@
     <s:form beanclass="com.github.cstroe.sqs.www.NotebookActionBean"
             id="createNotebookForm"
             class="form-horizontal">
-      <div class="form-group">
-        <div class="col-sm-2">
-        </div>
-        <div class="col-sm-8">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
           <s:errors/>
-        </div>
-        <div class="col-sm-2">
         </div>
       </div>
       <div class="form-group">
@@ -27,15 +23,11 @@
         <div class="col-sm-8">
           <input type="text" name="notebook.name" class="form-control" placeholder="Enter notebook name"/>
         </div>
-        <div class="col-sm-2">
-        </div>
       </div>
       <div class="form-group">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8">
+        <div class="col-sm-8 col-sm-offset-2">
             <s:submit name="create" class="btn btn-primary pull-right" value="Add" />
         </div>
-        <div class="col-sm-2"></div>
       </div>
     </s:form>
     </div>
