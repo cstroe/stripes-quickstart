@@ -16,7 +16,7 @@ public class NotebookRepository implements GenericRepository<Notebook, NotebookD
     }
 
     @Override
-    public void create(NotebookDao p) {
+    public void save(NotebookDao p) {
         getSession().save(p);
     }
 

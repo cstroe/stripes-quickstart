@@ -24,7 +24,7 @@ public class NotebookDao implements Notebook {
     @Column(name = "name")
     private String name;
 
-    private NotebookDao() {}
+    public NotebookDao() {}
 
     public NotebookDao(long id, String name) {
         Preconditions.checkArgument(id >= 0);

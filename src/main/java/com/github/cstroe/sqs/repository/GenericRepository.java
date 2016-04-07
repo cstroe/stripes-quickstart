@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface GenericRepository<T,D> {
     Optional<T> findById(long id);
-    void create(D dao);
+    void save(D dao);
     List<T> findAll();
 
     default Session getSession() {

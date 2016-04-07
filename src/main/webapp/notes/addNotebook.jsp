@@ -16,7 +16,7 @@
       <div class="form-group">
         <label class="control-label col-sm-2">Name:</label>
         <div class="col-sm-8">
-          <input type="text" name="notebookName" class="form-control" placeholder="Enter notebook name"/>
+          <input type="text" name="notebook.name" class="form-control" placeholder="Enter notebook name"/>
         </div>
         <div class="col-sm-2">
         </div>

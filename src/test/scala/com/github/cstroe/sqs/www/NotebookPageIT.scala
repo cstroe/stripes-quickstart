@@ -13,8 +13,8 @@ class NotebookPageIT extends FunSpec with BeforeAndAfter with ShouldMatchers wit
   describe("The add notebook page") {
     it("should create a notebook") {
       go to StripesUtil.getUrl(classOf[NotebookActionBean])
-      click on "notebookName"
-      textField("notebookName").value = "My New Notebook"
+      click on "notebook.name"
+      textField("notebook.name").value = "My New Notebook"
       submit
 
       eventually {
