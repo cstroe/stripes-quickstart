@@ -1,7 +1,6 @@
 package com.github.cstroe.sqs.dao;
 
 import com.github.cstroe.sqs.model.Notebook;
-import com.github.cstroe.sqs.model.Note;
 import com.google.common.base.Preconditions;
 
 import javax.persistence.Column;
@@ -10,8 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.Collections;
-import java.util.List;
 
 @Entity
 @Table(name = "notebook")
@@ -21,7 +18,7 @@ public class NotebookDao implements Notebook {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "name")
+    @Column(name = "name", unique = true)
     private String name;
 
     public NotebookDao() {}
