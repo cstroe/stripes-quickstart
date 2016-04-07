@@ -6,6 +6,7 @@ import com.github.cstroe.sqs.repository.RepositoryFactory;
 import net.sourceforge.stripes.action.DefaultHandler;
 import net.sourceforge.stripes.action.ForwardResolution;
 import net.sourceforge.stripes.action.HandlesEvent;
+import net.sourceforge.stripes.action.RedirectResolution;
 import net.sourceforge.stripes.action.Resolution;
 import net.sourceforge.stripes.action.UrlBinding;
 
@@ -21,7 +22,7 @@ public class NotebookActionBean extends BaseActionBean {
 
     public Resolution create() {
         RepositoryFactory.notebook().save(notebook);
-        return new ForwardResolution("/notes/viewAllNotes.jsp");
+        return new RedirectResolution(NotebookActionBean.class);
     }
 
     public NotebookDao getNotebook() {
