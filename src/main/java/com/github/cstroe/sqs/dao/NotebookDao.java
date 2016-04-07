@@ -18,7 +18,7 @@ public class NotebookDao implements Notebook {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "name", unique = true)
+    @Column(name = "name", unique = true, nullable = false)
     private String name;
 
     public NotebookDao() {}
