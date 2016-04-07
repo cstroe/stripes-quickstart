@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://stripes.sourceforge.net/stripes.tld" prefix="s" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <s:layout-definition>
     <!DOCTYPE html>
@@ -40,11 +39,7 @@
 
       <s:layout-component name="pageBody"/>
 
-      <fmt:setBundle basename="jsversions" var="bundle"/>
-      <fmt:message key="jquery_version" var="jquery_version" bundle="${bundle}"/>
-      <fmt:message key="bootstrap_version" var="bootstrap_version" bundle="${bundle}"/>
-      <script src="/webjars/jquery/${jquery_version}/jquery.min.js"></script>
-      <script src="/webjars/bootstrap/${bootstrap_version}/js/bootstrap.min.js"></script>
+      <jsp:include page="scripts.jsp"/>
     </body>
     </html>
 </s:layout-definition>
