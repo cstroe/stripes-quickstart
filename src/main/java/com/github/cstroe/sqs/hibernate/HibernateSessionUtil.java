@@ -48,7 +48,9 @@ public class HibernateSessionUtil {
 
     static void rollbackOnly() {
         rollbackReg.set(true);
-        getCurrentSession().clear();
+        if(getCurrentSession() != null) {
+            getCurrentSession().clear();
+        }
     }
 
 
