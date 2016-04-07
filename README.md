@@ -26,6 +26,17 @@ A simple note management application, with the following features:
 
 # References
 
-* [Scalatest with Arquillian](https://github.com/tsabirgaliev/arquillian-scalatest-bootstrap)
+## Design articles
 * [Clean and usable URLs in Stripes](https://110j.wordpress.com/2010/05/07/clean-and-usable-urls-in-stripes/)
 * [Stop Unit Testing Database Code](http://blog.jooq.org/2014/06/26/stop-unit-testing-database-code/)
+
+## Scalatest
+* [Scalatest with Arquillian](https://github.com/tsabirgaliev/arquillian-scalatest-bootstrap)
+* [Detailed description of Scalatest Runner](http://www.scalatest.org/user_guide/using_the_runner)
+
+## Maven Resource Filtering
+* [Maven resource filtering](http://stackoverflow.com/a/3697482/1591777)
+* [Dependency resolution in Maven resource filtering](https://issues.apache.org/jira/browse/MRESOURCES-31)
+* [Work around for Maven resource filtering bug](http://stackoverflow.com/a/2247645/1591777)
+* [maven-resources-plugin](http://maven.apache.org/plugins/maven-resources-plugin/source-repository.html) uses [maven-filtering](https://maven.apache.org/shared/maven-filtering/source-repository.html) and by default uses the `DefaultMavenFileFilter` part of of the [Maven Shared](https://maven.apache.org/shared/) project
+* project.dependencies is scoped only in the execution scope of plugins, not available for substitution in the POM, see [issue](http://stackoverflow.com/a/2247645/1591777) and [clarification](https://issues.apache.org/jira/browse/MRESOURCES-118?focusedCommentId=14446377&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-14446377) (read carefully)
