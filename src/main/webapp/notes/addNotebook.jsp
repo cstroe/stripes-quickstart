@@ -14,6 +14,15 @@
             id="createNotebookForm"
             class="form-horizontal">
       <div class="form-group">
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-8">
+          <s:errors/>
+        </div>
+        <div class="col-sm-2">
+        </div>
+      </div>
+      <div class="form-group">
         <label class="control-label col-sm-2">Name:</label>
         <div class="col-sm-8">
           <input type="text" name="notebook.name" class="form-control" placeholder="Enter notebook name"/>
