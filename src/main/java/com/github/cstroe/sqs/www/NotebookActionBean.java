@@ -22,7 +22,7 @@ public class NotebookActionBean extends BaseActionBean {
 
     public Resolution create() {
         RepositoryFactory.notebook().save(notebook);
-        return new RedirectResolution(NotebookActionBean.class);
+        return new RedirectResolution(NoteActionBean.class, "viewAll");
     }
 
     public NotebookDao getNotebook() {
