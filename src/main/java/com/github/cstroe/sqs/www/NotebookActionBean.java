@@ -35,7 +35,7 @@ public class NotebookActionBean extends BaseActionBean {
     }
 
     @ValidationMethod(on = "create", when = ValidationState.NO_ERRORS)
-    public void checkForDuplicateName(ValidationErrors errors) {
+    public void checkForDuplicateNotebookName(ValidationErrors errors) {
         if(RepositoryFactory.notebook().findByName(notebook.getName()).isPresent()) {
             errors.add("notebook.name", new SimpleError("A notebook already exists with that name"));
         }
