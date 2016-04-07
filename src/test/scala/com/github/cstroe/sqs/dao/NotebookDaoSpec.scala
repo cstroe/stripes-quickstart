@@ -2,7 +2,7 @@ package com.github.cstroe.sqs.dao
 
 import org.scalatest.FlatSpec
 
-class NotebookDtoSpec extends FlatSpec {
+class NotebookDaoSpec extends FlatSpec {
   val id = 1
   val name = "Notebookname"
   def group = new NotebookDao(id, name)

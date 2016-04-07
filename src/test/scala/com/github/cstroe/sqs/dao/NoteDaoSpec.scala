@@ -4,7 +4,7 @@ import java.time.LocalDateTime
 
 import org.scalatest.FlatSpec
 
-class NoteDtoSpec extends FlatSpec {
+class NoteDaoSpec extends FlatSpec {
   val id = 1
   val created = LocalDateTime.now()
   val title = "Note Title"
