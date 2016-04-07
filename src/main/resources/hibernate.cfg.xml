@@ -6,9 +6,9 @@
 <hibernate-configuration>
     <session-factory>
         <!-- Database connection settings -->
-        <property name="connection.driver_class">org.sqlite.JDBC</property>
+        <property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
         <property name="connection.provider_class">org.hibernate.hikaricp.internal.HikariCPConnectionProvider</property>
-        <property name="connection.url">jdbc:sqlite:temp.db</property>
+        <property name="connection.url">jdbc:hsqldb:mem</property>
         <property name="connection.username"/>
         <property name="connection.password"/>
 
@@ -16,7 +16,7 @@
         <property name="connection.pool_size">1</property>
 
         <!-- SQL dialect -->
-        <property name="dialect">com.github.cstroe.sqs.util.SQLiteDialect</property>
+        <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
 
         <!-- Disable the second-level cache  -->
         <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
@@ -25,7 +25,7 @@
         <property name="show_sql">true</property>
 
         <!-- Drop and re-create the database schema on startup -->
-        <property name="hbm2ddl.auto">validate</property>
+        <property name="hbm2ddl.auto">create</property>
 
         <mapping class="com.github.cstroe.sqs.dao.NotebookDao" />
     </session-factory>

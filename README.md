@@ -20,7 +20,7 @@ A simple note management application, with the following features:
 * Use [DBUnit](http://dbunit.sourceforge.net/) to reset database to known state when running Selenium tests
 
 ## Persistence Layer
-* [SQLite](https://www.sqlite.org/) for the database
+* [HyperSQL](http://hsqldb.org/) for the database
 * [Hibernate ORM](http://hibernate.org/orm/) for the object-relational mapper (with a [DAO design](https://developer.jboss.org/wiki/GenericDataAccessObjects))
 * [HikariCP](https://brettwooldridge.github.io/HikariCP/) for connection pooling
 
