@@ -12,7 +12,7 @@ import net.sourceforge.stripes.action.UrlBinding;
 
 @UrlBinding("/app/notebook/{$event}")
 public class NotebookActionBean extends BaseActionBean {
-    private NotebookDao notebook = new NotebookDao();
+    public NotebookDao notebook = new NotebookDao();
 
     @DefaultHandler
     @HandlesEvent("new")
@@ -23,13 +23,5 @@ public class NotebookActionBean extends BaseActionBean {
     public Resolution create() {
         RepositoryFactory.notebook().save(notebook);
         return new RedirectResolution(NoteActionBean.class, "viewAll");
-    }
-
-    public NotebookDao getNotebook() {
-        return notebook;
-    }
-
-    public void setNotebook(NotebookDao notebook) {
-        this.notebook = notebook;
     }
 }
