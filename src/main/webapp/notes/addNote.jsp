@@ -24,19 +24,18 @@
             <s:select name="notebook" class="form-control" id="selectNotebook">
               <s:options-collection collection="${actionBean.notebooks}" label="name" value="id"/>
             </s:select>
-          </div>        <div class="form-group">
+          </div>
+        </div>
+        <div class="form-group">
           <label class="control-label col-sm-2" for="comment">Note:</label>
           <div class="col-sm-8">
-          <textarea class="form-control" rows="5" id="comment" placeholder="Enter note content"></textarea>
-        </div>
-
+            <textarea class="form-control" rows="5" id="comment" placeholder="Enter note content"></textarea>
+          </div>
         </div>
         <div class="form-group">
           <label class="control-label col-sm-2" for="title">Title:</label>
           <div class="col-sm-8">
             <input type="text" class="form-control" id="title" placeholder="Enter title"/>
-          </div>
-          <div class="col-sm-2">
           </div>
         </div>
         <div class="form-group">
