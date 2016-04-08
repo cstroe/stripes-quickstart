@@ -6,10 +6,14 @@ import org.hibernate.Session;
 import java.util.List;
 import java.util.Optional;
 
-public interface GenericRepository<T,D> {
-    Optional<T> findById(long id);
-    void save(D dao);
-    List<T> findAll();
+/**
+ * @param <MODEL> A type in our model.
+ * @param <DAO> The DAO implementation of the model interface.
+ */
+public interface GenericRepository<MODEL, DAO extends MODEL> {
+    Optional<MODEL> findById(long id);
+    void save(DAO dao);
+    List<MODEL> findAll();
 
     default Session getSession() {
         return HibernateSessionUtil.getCurrentSession();
