@@ -83,6 +83,33 @@
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.3.8.v20160314</version>
+                <executions>
+                    <execution>
+                        <id>start-jetty</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>deploy-war</goal>
+                        </goals>
+                        <configuration>
+                            <scanIntervalSeconds>0</scanIntervalSeconds>
+                            <daemon>true</daemon>
+                            <stopKey>sqsit</stopKey>
+                            <stopPort>8081</stopPort>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>stop-jetty</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>stop</goal>
+                        </goals>
+                        <configuration>
+                            <stopKey>sqsit</stopKey>
+                            <stopPort>8081</stopPort>
+                            <stopWait>5</stopWait>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <!-- Disable Surefire, we're going to use Scalatest, see below -->
             <plugin>
@@ -105,9 +132,20 @@
                 <executions>
                     <execution>
                         <id>test</id>
+                        <phase>test</phase>
                         <goals>
                             <goal>test</goal>
                         </goals>
+                    </execution>
+                    <execution>
+                        <id>integration-test</id>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <configuration>
+                            <suffixes>IT</suffixes>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
