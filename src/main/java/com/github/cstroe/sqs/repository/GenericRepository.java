@@ -11,7 +11,7 @@ import java.util.Optional;
  * @param <DAO> The DAO implementation of the model interface.
  */
 public interface GenericRepository<MODEL, DAO extends MODEL> {
-    Optional<MODEL> findById(long id);
+    Optional<DAO> findById(long id);
     void save(DAO dao);
     List<MODEL> findAll();
 

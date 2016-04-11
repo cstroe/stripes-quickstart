@@ -9,8 +9,8 @@ import java.util.Optional;
 
 public class NoteRepository implements GenericRepository<Note, NoteDao> {
     @Override
-    public Optional<Note> findById(long id) {
-        return Optional.ofNullable((Note)getSession().createCriteria(NoteDao.class)
+    public Optional<NoteDao> findById(long id) {
+        return Optional.ofNullable((NoteDao)getSession().createCriteria(NoteDao.class)
                 .add(Restrictions.eq("id", id))
                 .uniqueResult());
     }

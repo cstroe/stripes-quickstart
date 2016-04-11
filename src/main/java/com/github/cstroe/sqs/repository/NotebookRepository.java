@@ -10,8 +10,8 @@ import java.util.Optional;
 
 public class NotebookRepository implements GenericRepository<Notebook, NotebookDao> {
     @Override
-    public Optional<Notebook> findById(long id) {
-        return Optional.ofNullable((Notebook)getSession().createCriteria(NotebookDao.class)
+    public Optional<NotebookDao> findById(long id) {
+        return Optional.ofNullable((NotebookDao)getSession().createCriteria(NotebookDao.class)
                 .add(Restrictions.eq("id", id))
                 .uniqueResult());
     }
