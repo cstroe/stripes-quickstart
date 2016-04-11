@@ -26,7 +26,7 @@
       </div>
       <div class="form-group">
         <div class="col-sm-8 col-sm-offset-2">
-            <s:submit name="create" class="btn btn-primary pull-right" value="Add" />
+            <s:submit name="create" class="btn btn-primary pull-right" value="Create" />
         </div>
       </div>
     </s:form>
