@@ -10,7 +10,7 @@ class NoteDaoSpec extends FlatSpec {
   val title = "Note Title"
   val content = "one\ntwo\nthree"
   val notebook = new NotebookDao(1, "Somegroup")
-  def noteDao = new NoteDao
+  val noteDao = new NoteDao
 
   "The NoteDao constructor" should "accept valid parameters" in {
     val note = new NoteDao(id, created, title, content, notebook)
@@ -39,10 +39,9 @@ class NoteDaoSpec extends FlatSpec {
     }
   }
 
-  it should "not accept null content" in {
-    intercept[NullPointerException] {
-      new NoteDao(id, created, title, null, notebook)
-    }
+  it should "accept null content" in {
+    val note = new NoteDao(id, created, title, null, notebook)
+    assert(note.getContent == null)
   }
 
   it should "not accept a null notebook" in {
@@ -57,10 +56,21 @@ class NoteDaoSpec extends FlatSpec {
     }
   }
 
+  it should "set the id properly" in {
+    noteDao.setId(9232)
+    assert(noteDao.getId == 9232)
+  }
+
   "The NoteDao created setter" should "not accept a null date" in {
     intercept[NullPointerException] {
       noteDao.setCreated(null)
     }
+  }
+
+  it should "set the created date properly" in {
+    val date = LocalDateTime.now
+    noteDao.setCreated(date)
+    assert(noteDao.getCreated.equals(date))
   }
 
   "The NoteDao title setter" should "not accept a null title" in {
@@ -69,15 +79,30 @@ class NoteDaoSpec extends FlatSpec {
     }
   }
 
-  "The NoteDao content setter" should "not accept null content" in {
-    intercept[NullPointerException] {
-      noteDao.setContent(null)
-    }
+  it should "set the title properly" in {
+    noteDao.setTitle("a title")
+    assert(noteDao.getTitle == "a title")
+  }
+
+  "The NoteDao content setter" should "accept null content" in {
+    noteDao.setContent(null)
+    assert(noteDao.getContent == null)
+  }
+
+  it should "set the content properly" in {
+    noteDao.setContent("some content here")
+    assert(noteDao.getContent == "some content here")
   }
 
   "The NoteDao notebook setter" should "not accept a null notebook" in {
     intercept[NullPointerException] {
       noteDao.setNotebook(null)
     }
+  }
+
+  it should "set the notebook properly" in {
+    noteDao.setNotebook(notebook)
+    assert(noteDao.getNotebook.getId == notebook.getId)
+    assert(noteDao.getNotebook.getName == notebook.getName)
   }
 }

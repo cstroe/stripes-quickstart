@@ -27,10 +27,9 @@ public class NoteDao implements Note {
     @Column(name = "title", nullable = false)
     private String title;
 
-    @Column(name = "content", nullable = false)
+    @Column(name = "content")
     private String content;
 
-    @Column(name = "notebook", nullable = false)
     @ManyToOne(targetEntity = NotebookDao.class, optional = false)
     private Notebook notebook;
 
@@ -80,7 +79,6 @@ public class NoteDao implements Note {
     }
 
     public void setContent(String content) {
-        Preconditions.checkNotNull(content);
         this.content = content;
     }
 
