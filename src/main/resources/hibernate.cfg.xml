@@ -28,5 +28,6 @@
         <property name="hbm2ddl.auto">create</property>
 
         <mapping class="com.github.cstroe.sqs.dao.NotebookDao" />
+        <mapping class="com.github.cstroe.sqs.dao.NoteDao" />
     </session-factory>
 </hibernate-configuration>
