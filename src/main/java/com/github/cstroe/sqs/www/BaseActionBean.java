@@ -15,15 +15,6 @@ import java.util.List;
 
 class BaseActionBean implements ActionBean {
     private ActionBeanContext context;
-    private Session session;
-
-    public BaseActionBean() {
-        session = HibernateSessionUtil.getCurrentSession();
-    }
-
-    public Session getSession() {
-        return session;
-    }
 
     public void setContext(ActionBeanContext context) {
         this.context = context;
@@ -42,7 +33,7 @@ class BaseActionBean implements ActionBean {
         throw new RuntimeException("Error was encountered");
     }
 
-    public List<Notebook> getNotebooks() {
+    public List<NotebookDao> getNotebooks() {
         return RepositoryFactory.notebook().findAll();
     }
 }
