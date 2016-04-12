@@ -2,19 +2,15 @@ package com.github.cstroe.sqs.www;
 
 import com.github.cstroe.sqs.hibernate.HibernateSessionUtil;
 import net.sourceforge.stripes.action.DefaultHandler;
-import net.sourceforge.stripes.action.ForwardResolution;
+import net.sourceforge.stripes.action.RedirectResolution;
 import net.sourceforge.stripes.action.Resolution;
 import net.sourceforge.stripes.action.UrlBinding;
-import org.dbunit.DefaultDatabaseTester;
-import org.dbunit.DefaultOperationListener;
-import org.dbunit.IDatabaseTester;
 import org.dbunit.database.DatabaseConnection;
 import org.dbunit.database.IDatabaseConnection;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
 import org.dbunit.operation.DatabaseOperation;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import java.io.InputStream;
 import java.sql.SQLException;
@@ -40,8 +36,6 @@ public class DbUnitActionBean extends BaseActionBean {
             }
         });
 
-
-
-        return new ForwardResolution("/app/note/viewAll");
+        return new RedirectResolution(ViewActionBean.class);
     }
 }
