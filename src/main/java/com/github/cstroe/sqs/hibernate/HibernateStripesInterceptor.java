@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletException;
 
-@Intercepts(value = {LifecycleStage.HandlerResolution, LifecycleStage.ResolutionExecution})
+@Intercepts(value = {LifecycleStage.HandlerResolution, LifecycleStage.ResolutionExecution, LifecycleStage.RequestComplete})
 public class HibernateStripesInterceptor implements Interceptor, ConfigurableComponent {
     private static final Logger LOG = LoggerFactory.getLogger(HibernateStripesInterceptor.class);
 
@@ -34,7 +34,11 @@ public class HibernateStripesInterceptor implements Interceptor, ConfigurableCom
                 LOG.debug("committing and closing transaction");
                 HibernateSessionUtil.commitTransaction();
             }
-        } catch (Throwable ex) {
+
+            if(ctx.getLifecycleStage().equals(LifecycleStage.RequestComplete)) {
+                HibernateSessionUtil.closeSession();
+            }
+       } catch (Throwable ex) {
             HibernateSessionUtil.rollbackOnly();
             if (ex instanceof ServletException) {
                 throw (ServletException) ex;
