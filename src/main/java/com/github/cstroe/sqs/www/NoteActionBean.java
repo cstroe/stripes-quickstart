@@ -22,6 +22,7 @@ public class NoteActionBean extends BaseActionBean {
             @Validate(field = "notebook", required = true, on = "create", converter = NotebookTypeConverter.class)
     })
     private NoteDao note;
+    private NoteDao noteInDatabase;
 
     @DefaultHandler
     @HandlesEvent("new")
@@ -40,20 +41,22 @@ public class NoteActionBean extends BaseActionBean {
     }
 
     public Resolution save() {
-        Optional<NoteDao> maybeNote = RepositoryFactory.note().findById(note.getId());
-        if(!maybeNote.isPresent()) {
-            getContext().getValidationErrors().add("note", new SimpleError("Note could not be found"));
-            return getContext().getSourcePageResolution();
-        }
-
-        NoteDao noteDao = maybeNote.get();
-        noteDao.setTitle(note.getTitle());
-        noteDao.setContent(note.getContent());
-        RepositoryFactory.note().save(noteDao);
-        return new RedirectResolution(NoteActionBean.class, "edit").addParameter("id", noteDao.getId());
+        saveNoteInDatabase();
+        return new RedirectResolution(NoteActionBean.class, "edit").addParameter("id", noteInDatabase.getId());
     }
 
-    @ValidationMethod(on = "edit", when = ValidationState.NO_ERRORS)
+    public Resolution saveAndClose() {
+        saveNoteInDatabase();
+        return new RedirectResolution(ViewActionBean.class, "notebook").addParameter("id", noteInDatabase.getNotebook().getId());
+    }
+
+    private void saveNoteInDatabase() {
+        noteInDatabase.setTitle(note.getTitle());
+        noteInDatabase.setContent(note.getContent());
+        RepositoryFactory.note().save(noteInDatabase);
+    }
+
+    @ValidationMethod(on = "edit")
     public void lookupNote(ValidationErrors errors) {
         Optional<NoteDao> maybeNote = RepositoryFactory.note().findById(id);
         if(maybeNote.isPresent()) {
@@ -63,11 +66,21 @@ public class NoteActionBean extends BaseActionBean {
         }
     }
 
-    @ValidationMethod(on = "create", when = ValidationState.NO_ERRORS)
+    @ValidationMethod(on = "create")
     public void checkThatNotebookExists(ValidationErrors errors) {
         Optional<NotebookDao> maybeNotebook = RepositoryFactory.notebook().findById(note.getNotebook().getId());
         if(!maybeNotebook.isPresent()) {
             errors.add("note.notebook", new SimpleError("Invalid notebook selected"));
+        }
+    }
+
+    @ValidationMethod(on = {"save", "saveAndClose"})
+    public void checkThatNoteExists(ValidationErrors errors) {
+        Optional<NoteDao> maybeNote = RepositoryFactory.note().findById(note.getId());
+        if(!maybeNote.isPresent()) {
+            errors.add("note", new SimpleError("Note could not be found"));
+        } else {
+            noteInDatabase = maybeNote.get();
         }
     }
 
