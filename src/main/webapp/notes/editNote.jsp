@@ -25,8 +25,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="content" class="col-sm-8 col-sm-offset-2">Note:</label>
-          <s:textarea name="note.content" id="content" class="col-sm-8 col-sm-offset-2" rows="12">${actionBean.note.content}</s:textarea>
+          <s:textarea name="note.content" id="content">${actionBean.note.content}</s:textarea>
         </div>
         <div class="form-group">
           <div class="col-sm-8 col-sm-offset-2">
@@ -35,5 +34,10 @@
         </div>
       </s:form>
     </div>
+
+    <!-- start up Simple Markdown Editor -->
+    <script>
+      var simplemde = new SimpleMDE({spellChecker: false});
+    </script>
   </s:layout-component>
 </s:layout-render>
