@@ -22,22 +22,25 @@
               <th>Notebook</th>
             </thead>
             <tbody id="notebooksList">
+              <s:url var="url" beanclass="com.github.cstroe.sqs.www.ViewActionBean" event="all"/>
               <c:forEach items="${actionBean.notebooks}" var="notebook">
-                <s:url var="url" beanclass="com.github.cstroe.sqs.www.ViewActionBean" event="all"/>
-                <tr>
-                  <td>
-                    <s:link beanclass="com.github.cstroe.sqs.www.ViewActionBean" event="notebook">
-                      <s:param name="id" value="${notebook.id}"/>
-                      <s:param name="_sourcePage" value="${url}"/>
-                      ${notebook.name}
-                    </s:link>
-                  </td>
-                </tr>
+                <td>
+                  <s:link beanclass="com.github.cstroe.sqs.www.ViewActionBean" event="notebook">
+                    <s:param name="id" value="${notebook.id}"/>
+                    <s:param name="_sourcePage" value="${url}"/>
+                    ${notebook.name}
+                  </s:link>
+                </td>
               </c:forEach>
             </tbody>
           </table>
         </div>
         <div class="col-sm-9">
+          <c:forEach items="${actionBean.notes}" var="note">
+            <p>
+              ${note.title}
+            </p>
+          </c:forEach>
         </div>
       </div>
     </div>
