@@ -17,5 +17,6 @@ object StripesUtil {
     } else {
       url + "?" + event
     }
+    url.replaceAll("/[{].*[}]", "")
   }
 }
