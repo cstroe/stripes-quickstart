@@ -13,7 +13,7 @@ import java.util.Optional;
 public interface GenericRepository<MODEL, DAO extends MODEL> {
     Optional<DAO> findById(long id);
     void save(DAO dao);
-    List<MODEL> findAll();
+    List<DAO> findAll();
 
     default Session getSession() {
         return HibernateSessionUtil.getCurrentSession();

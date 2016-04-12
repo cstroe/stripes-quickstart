@@ -22,7 +22,7 @@ public class NoteRepository implements GenericRepository<Note, NoteDao> {
 
     @SuppressWarnings("unchecked")
     @Override
-    public List<Note> findAll() {
-        return (List<Note>) getSession().createCriteria(NoteDao.class).list();
+    public List<NoteDao> findAll() {
+        return (List<NoteDao>) getSession().createCriteria(NoteDao.class).list();
     }
 }

@@ -29,7 +29,7 @@ public class NotebookRepository implements GenericRepository<Notebook, NotebookD
 
     @SuppressWarnings("unchecked")
     @Override
-    public List<Notebook> findAll() {
-        return (List<Notebook>) getSession().createCriteria(NotebookDao.class).list();
+    public List<NotebookDao> findAll() {
+        return (List<NotebookDao>) getSession().createCriteria(NotebookDao.class).list();
     }
 }
