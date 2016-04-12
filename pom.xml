@@ -91,7 +91,7 @@
                             <goal>deploy-war</goal>
                         </goals>
                         <configuration>
-                            <scanIntervalSeconds>0</scanIntervalSeconds>
+                            <scanIntervalSeconds>2</scanIntervalSeconds>
                             <daemon>true</daemon>
                             <stopKey>sqsit</stopKey>
                             <stopPort>8081</stopPort>
