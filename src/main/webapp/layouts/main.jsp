@@ -2,6 +2,8 @@
 <%@ taglib uri="http://stripes.sourceforge.net/stripes.tld" prefix="s" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+<jsp:include page="define_javascript_library_versions.jsp"/>
+
 <s:layout-definition>
     <!DOCTYPE html>
     <html>
@@ -9,10 +11,13 @@
         <meta charset="utf-8">
         <title>${title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/${bootstrap_version}/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/webjars/simplemde-markdown-editor/${simplemde_version}/dist/simplemde.min.css">
     </head>
 
     <body>
+      <jsp:include page="scripts.jsp"/>
+
       <nav class="navbar navbar-default">
         <div class="container">
           <ul class="nav navbar-nav">
@@ -38,8 +43,6 @@
       </div>
 
       <s:layout-component name="pageBody"/>
-
-      <jsp:include page="scripts.jsp"/>
     </body>
     </html>
 </s:layout-definition>
