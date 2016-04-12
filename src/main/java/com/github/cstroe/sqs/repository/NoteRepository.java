@@ -2,6 +2,7 @@ package com.github.cstroe.sqs.repository;
 
 import com.github.cstroe.sqs.dao.NoteDao;
 import com.github.cstroe.sqs.model.Note;
+import com.github.cstroe.sqs.model.Notebook;
 import org.hibernate.criterion.Restrictions;
 
 import java.util.List;
@@ -24,5 +25,13 @@ public class NoteRepository implements GenericRepository<Note, NoteDao> {
     @Override
     public List<NoteDao> findAll() {
         return (List<NoteDao>) getSession().createCriteria(NoteDao.class).list();
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<NoteDao> findByNotebook(Notebook notebook) {
+        return (List<NoteDao>) getSession().createCriteria(NoteDao.class)
+                .createCriteria("notebook")
+                .add(Restrictions.eq("id", notebook.getId()))
+                .list();
     }
 }
