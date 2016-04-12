@@ -20,7 +20,7 @@
         </div>
         <s:hidden name="note.id"/>
         <div class="form-group">
-          <div class="col-sm-8 col-sm-offset-2">
+          <div class="col-sm-12">
             <s:text name="note.title" class="form-control" id="title"/>
           </div>
         </div>
@@ -28,7 +28,8 @@
           <s:textarea name="note.content" id="content">${actionBean.note.content}</s:textarea>
         </div>
         <div class="form-group">
-          <div class="col-sm-8 col-sm-offset-2">
+          <div class="col-sm-12">
+            <s:submit name="saveAndClose" class="btn pull-right" value="Save and Close"/>
             <s:submit name="save" class="btn btn-primary pull-right" value="Save"/>
           </div>
         </div>
