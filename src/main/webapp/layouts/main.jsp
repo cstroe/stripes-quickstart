@@ -17,7 +17,7 @@
         <div class="container">
           <ul class="nav navbar-nav">
             <li id="viewNotesNav" class="${viewAllNotesClass}">
-              <s:link beanclass="com.github.cstroe.sqs.www.NoteActionBean" event="viewAll">View Notes</s:link>
+              <s:link beanclass="com.github.cstroe.sqs.www.ViewActionBean" event="all">View Notes</s:link>
             </li>
             <li id="addNotebookNav" class="${addNotebookClass}">
               <s:link beanclass="com.github.cstroe.sqs.www.NotebookActionBean" event="new">Add Notebook</s:link>
