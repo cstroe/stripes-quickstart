@@ -31,7 +31,7 @@ public class NotebookActionBean extends BaseActionBean {
 
     public Resolution create() {
         RepositoryFactory.notebook().save(notebook);
-        return new RedirectResolution(NoteActionBean.class, "viewAll");
+        return new RedirectResolution(ViewActionBean.class, "all");
     }
 
     @ValidationMethod(on = "create", when = ValidationState.NO_ERRORS)
