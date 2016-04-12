@@ -38,7 +38,10 @@
         <div class="col-sm-9">
           <c:forEach items="${actionBean.notes}" var="note">
             <p>
-              ${note.title}
+              <s:link beanclass="com.github.cstroe.sqs.www.NoteActionBean" event="edit">
+                <s:param name="id" value="${note.id}"/>
+                ${note.title}
+              </s:link>
             </p>
           </c:forEach>
         </div>
