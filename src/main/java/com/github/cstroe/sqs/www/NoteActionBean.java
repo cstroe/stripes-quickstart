@@ -24,10 +24,6 @@ public class NoteActionBean extends BaseActionBean {
     private NoteDao note;
 
     @DefaultHandler
-    public Resolution viewAll() {
-        return new ForwardResolution("/notes/viewAllNotes.jsp");
-    }
-
     @HandlesEvent("new")
     public Resolution newNote() {
         return new ForwardResolution("/notes/addNote.jsp");
