@@ -1,3 +1,3 @@
 <%
-	response.sendRedirect("/app/note/viewAll");
+	response.sendRedirect("/app/view/all");
 %>
