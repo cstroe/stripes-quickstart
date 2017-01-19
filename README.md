@@ -8,6 +8,14 @@ A simple note management application, with the following features:
 * Create Notes with title, created date, and note body
 * Organize Notes in named Notebooks
 
+## Usage
+
+To run the web application using an in memory database in Jetty:
+
+    mvn jetty:run
+
+You should then be able to access it at http://localhost:8080
+
 # Technical Features
 
 ## View Layer
