@@ -12,9 +12,11 @@ A simple note management application, with the following features:
 
 To run the web application using an in memory database in Jetty:
 
-    mvn jetty:run
+    mvn -Djetty.http.port=8080 jetty:run
 
 You should then be able to access it at http://localhost:8080
+
+NOTE: The `jetty:run` command will fail with `Address already in use` if you already have an application running on port 8080.
 
 # Technical Features
 
