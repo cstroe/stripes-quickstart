@@ -21,7 +21,7 @@ NOTE: The `jetty:run` command will fail with `Address already in use` if you alr
 # Technical Features
 
 ## View Layer
-* MVC using the [Stripes Framework](http://www.stripesframework.org/)
+* MVC using the [Stripes Framework](https://github.com/StripesFramework/stripes)
 * Twitter's [Bootstrap](http://getbootstrap.com/) for frontend styling
 
 ## Testing
