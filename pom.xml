@@ -215,7 +215,7 @@
             <!-- HyperSQL DB for our persistence layer -->
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
-            <version>2.3.3</version>
+            <version>2.7.1</version>
         </dependency>
         <dependency>
             <!-- SQLite for the database -->
