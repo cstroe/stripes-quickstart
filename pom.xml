@@ -17,7 +17,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <selenium.version>2.53.0</selenium.version>
-        <bootstrap.version>3.3.6</bootstrap.version>
+        <bootstrap.version>3.4.0</bootstrap.version>
         <simplemde.version>1.9.0</simplemde.version>
         <jquery.version>1.11.1</jquery.version> <!-- Manually updated :( -->
         <overwrite.binaries>false</overwrite.binaries>
